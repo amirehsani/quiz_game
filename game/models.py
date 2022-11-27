@@ -4,6 +4,7 @@ from django.db import models
 class Question(models.Model):
     title = models.TextField(null=False)
     published_date = models.DateTimeField(blank=True, null=True)
+    objects = models.Manager()
 
 
 class Answer(models.Model):
@@ -12,6 +13,7 @@ class Answer(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE, related_name='answer')
     is_correct = models.BooleanField(default=False)
     published_date = models.DateTimeField(blank=True, null=True)
+    objects = models.Manager()
 
 
 # class User(models.Model):
