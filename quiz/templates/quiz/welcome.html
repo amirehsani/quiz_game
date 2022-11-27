@@ -5,11 +5,24 @@
     <title>Title</title>
 </head>
 <body>
+
     <div class="page-header">
-         <h1> Welcome!</h1>
+        {% if %}
+            <h1> Welcome {{ request.user }}</h1>
+            {% for question in question %}
+                {{ question.title }}
+                {% for answer in answer %}
+
+                    {{ answer.title }}
+                    {{ answer.title }}
+                    {{ answer.title }}
+                    {{ answer.title }}
+
+                {% endfor %}
+            {% endfor %}
+        {% endif %}
     </div>
-    {%if }
-    {% endif %}
+
 
 </body>
 </html>
